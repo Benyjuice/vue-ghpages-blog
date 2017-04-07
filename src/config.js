@@ -2,13 +2,13 @@ module.exports = {
   /**
    * Output
    */
-  blogTitle: 'Unknow Me',
+  blogTitle: 'Beny Space',
   favicon: null,
 
   /**
    * API
    */
-  repo: 'viko16/writings', // Which repository you stored the posts
+  repo: 'benyjuice/writings', // Which repository you stored the posts
   path: 'posts',
   branch: 'master'
 }
