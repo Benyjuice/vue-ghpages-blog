@@ -27,6 +27,7 @@ script:
 after_success:
   - cd dist
   - cp index.html 404.html
+  - echo "blog.homenas.ml" > CNAME
   - git add --all .
   - git commit --message "Automatically update from travis-ci"
   - git push --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
