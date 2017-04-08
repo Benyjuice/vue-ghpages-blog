@@ -6,6 +6,7 @@
       <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">{{ this.date | timeago }}</time>
     </h1>
     <article v-if="content" v-html="htmlFromMarkdown"></article>
+    <div id="comment"></div>
   </section>
 </template>
 
@@ -15,6 +16,18 @@
   import conf from '../config'
   import fm from 'front-matter'
   import marked from '../utils/render.js'
+  import Gitment from 'gitment'
+
+  var gitment = new Gitment({
+    id: '1',
+    owner: 'benyjuice',
+    repo: 'blog',
+    oauth: {
+      client_id: 'c03f7d0b85a2ed9bf983',
+      client_secret: '371f92ebf03c1315b55d8de262f235444b7083a3'
+    }
+  })
+  gitment.render('#comment')
 
   export default {
     name: 'postView',
